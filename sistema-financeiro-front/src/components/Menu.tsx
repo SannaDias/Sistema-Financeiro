@@ -1,0 +1,13 @@
+import { NavLink } from "react-router-dom";
+import "./Menu.css";
+
+export default function Menu() {
+  return (
+    <nav className="menu">
+      <NavLink to="/pessoas">Pessoas</NavLink>
+      <NavLink to="/categorias">Categorias</NavLink>
+      <NavLink to="/transacoes">Transações</NavLink>
+      <NavLink to="/relatorio-pessoas">Relatório</NavLink>
+    </nav>
+  );
+}

@@ -1,0 +1,45 @@
+.relatorio-container {
+  padding: 40px;
+}
+
+.relatorio-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.receita {
+  color: #16a34a;
+}
+
+.despesa {
+  color: #dc2626;
+}
+
+.saldo-positivo {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.saldo-negativo {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.totais-gerais {
+  margin-top: 24px;
+  display: flex;
+  gap: 24px;
+  font-weight: 600;
+}

@@ -1,0 +1,77 @@
+.categorias-container {
+  min-height: 100vh;
+  background: #f4f6fb;
+  padding: 40px;
+}
+
+.categorias-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.categorias-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.categorias-form {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #c7d2fe;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.categorias-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.categorias-item {
+  background: #f9fafb;
+  padding: 14px 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoria-desc {
+  font-weight: 600;
+}
+
+.categoria-tag {
+  font-size: 13px;
+  background: #e0e7ff;
+  color: #1e40af;
+  padding: 4px 10px;
+  border-radius: 999px;
+}

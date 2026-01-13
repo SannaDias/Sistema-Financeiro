@@ -1,0 +1,100 @@
+/* 🔹 Container geral da página */
+.transacoes-container {
+  min-height: 100vh;
+  background: #f4f6fb;
+  padding: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* Card principal */
+.transacoes-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/*  Título */
+.transacoes-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+/* ===========================
+   FORMULÁRIO
+=========================== */
+
+.transacoes-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.transacoes-form input,
+.transacoes-form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.transacoes-form input:focus,
+.transacoes-form select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/*  Botão */
+.transacoes-form button {
+  grid-column: span 3;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.transacoes-form button:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================
+   LISTAGEM
+=========================== */
+
+.transacoes-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Item genérico */
+.transacao-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/*  Despesa */
+.transacao-item.despesa {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Receita */
+.transacao-item.receita {
+  background: #dcfce7;
+  color: #166534;
+}
