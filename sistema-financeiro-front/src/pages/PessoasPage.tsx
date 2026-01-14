@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { apiGet, apiPost } from "../api/api";
+import { apiGet, apiPost, apiDelete } from "../api/api";
 import type { Pessoa } from "../models/Pessoa";
 
 
@@ -24,8 +24,9 @@ export default function PessoasPage() {
     if (!nome || idade <= 0){
         console.log("VALIDAÇÃO BLOQUEOU")
         return;
-    }
-    ;
+    };
+
+ 
 
     await apiPost("/pessoas", { nome, idade });
     console.log("POST FEITO");
@@ -46,6 +47,13 @@ export default function PessoasPage() {
     }, 3000);
   };
 
+       const deletarPessoa = async (id: number) =>{
+      await apiDelete(`/pessoas/${id}`);
+
+      const dados = await apiGet<Pessoa[]>("/pessoas");
+      setPessoas(dados);
+    }
+
   return (
     <div className="pessoas-container">
       <div className="pessoas-card">
@@ -56,7 +64,7 @@ export default function PessoasPage() {
 
         <div className="pessoas-form">
 
-            {/* 🔹 Campo Nome */}
+            {/*Campo Nome */}
             <div className="input-group">
                 <label>Nome</label>
                 <input
@@ -89,8 +97,15 @@ export default function PessoasPage() {
         <ul className="pessoas-list">
           {pessoas.map((p) => (
             <li key={p.id} className="pessoas-item">
-              <span className="pessoas-name">{p.nome}</span>
-              <span className="pessoas-age">{p.idade} anos</span>
+              <span>{p.nome} ({p.idade})</span>
+
+              
+              <button
+                className="btn-delete"
+                onClick={() => deletarPessoa(p.id)}
+              >
+                Excluir
+              </button>
             </li>
           ))}
         </ul>

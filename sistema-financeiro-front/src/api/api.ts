@@ -28,3 +28,14 @@ export async function apiPost<T>(url:string, data:unknown): Promise<T> {
 
     return response.json();
 }
+
+
+export async function apiDelete(url: string) {
+  const response = await fetch(`${API_URL}${url}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Erro no DELETE");
+  }
+}
