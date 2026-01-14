@@ -9,7 +9,9 @@ export default function PessoasPage() {
   const [pessoas, setPessoas] = useState<Pessoa[]>([]);
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState<number>(0);
-   const [toastVisivel, setToastVisivel] = useState(false);
+  const [toastVisivel, setToastVisivel] = useState(false);
+  const [toastErro, setToastErro] = useState<string | null> (null);
+
 
   useEffect(() => {
     const carregar = async () => {
@@ -19,17 +21,20 @@ export default function PessoasPage() {
     carregar();
   }, []);
 
-  const cadastrarPessoa = async () => {
-     console.log("CLICOU NO BOTÃO");
-    if (!nome || idade <= 0){
-        console.log("VALIDAÇÃO BLOQUEOU")
+  const cadastrarPessoa = async () => {     
+    if (!nome){
+      setToastErro("Nome é obrigatorio");
+      setTimeout(()=> setToastErro(null), 3000)
         return;
     };
 
- 
+    if(idade <= 0){
+      setToastErro("Idade deve ser maior que zero");
+      setTimeout(()=> setToastErro(null),3000);
+      return;
+    }
 
     await apiPost("/pessoas", { nome, idade });
-    console.log("POST FEITO");
 
     setNome("");
     setIdade(0);
@@ -113,6 +118,11 @@ export default function PessoasPage() {
        {toastVisivel && (
       <div className="toast-success">
         Pessoa cadastrada com sucesso ✅
+      </div>
+    )}
+        {toastErro && (
+      <div className="toast-error">
+        {toastErro} ❌
       </div>
     )}
     </div>

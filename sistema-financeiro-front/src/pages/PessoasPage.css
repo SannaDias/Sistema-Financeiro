@@ -136,3 +136,16 @@
 .btn-delete:hover {
   background: #b91c1c;
 }
+
+
+.toast-error {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dc2626;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
