@@ -1,5 +1,5 @@
 // total de uma pessoa no relatório
-export interface RelatorioPessoa {
+export interface RelatorioPessoaItem {
   pessoaId: number;
   nome: string;
   totalReceitas: number;
@@ -8,9 +8,15 @@ export interface RelatorioPessoa {
 }
 
 // resposta da API
+export interface TotaisGerais {
+ totalReceitas: number;
+ totalDespesas: number;
+ saldoGeral: number;
+}
+
+
+
 export interface RelatorioPessoaResponse {
-  pessoas: RelatorioPessoa[];
-  totalReceitasGeral: number;
-  totalDespesasGeral: number;
-  saldoGeral: number;
+  pessoas: RelatorioPessoaItem[];
+  totaisGerais: TotaisGerais;
 }

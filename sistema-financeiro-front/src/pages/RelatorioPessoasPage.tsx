@@ -57,9 +57,9 @@ export default function RelatorioPessoasPage() {
 
         {/*Totais gerais */}
         <div className="totais-gerais">
-          <p><strong>Total Receitas:</strong> R$ {relatorio.totalReceitasGeral.toFixed(2)}</p>
-          <p><strong>Total Despesas:</strong> R$ {relatorio.totalDespesasGeral.toFixed(2)}</p>
-          <p><strong>Saldo Geral:</strong> R$ {relatorio.saldoGeral.toFixed(2)}</p>
+          <p><strong>Total Receitas:</strong> R$ {relatorio.totaisGerais.totalReceitas.toFixed(2)}</p>
+          <p><strong>Total Despesas:</strong> R$ {relatorio.totaisGerais.totalDespesas.toFixed(2)}</p>
+          <p><strong>Saldo Geral:</strong> R$ {relatorio.totaisGerais.saldoGeral.toFixed(2)}</p>
         </div>
       </div>
     </div>
